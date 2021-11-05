@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+// Navbar
+
+.navbar {
+  display: none;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__heading {
+    padding: 10px;
+    background-color: #800080;
+    padding-right: 150px;
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    width: 60%;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+}
+
+// Grid
+
+.grid-container {
+  display: grid;
+  grid-auto-rows: 50px;
+  grid-gap: 15px;
+  margin: 50px;
+
+  grid-template-areas:
+    "picture"
+    "about"
+    "hobbies"
+    "contact"
+    "employment"
+    "employment"
+    "employment"
+    "education";
+
+  #img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    justify-self: center;
+  }
+
+  &__item {
+    background-color: #800080;
+    color: white;
+    padding: 10px;
+  }
+}
+
+#img {
+  grid-area: picture;
+}
+#about {
+  grid-area: about;
+}
+#hobbies {
+  grid-area: hobbies;
+}
+#contact {
+  grid-area: contact;
+}
+#employment {
+  grid-area: employment;
+}
+#education {
+  grid-area: education;
+}
+
+@media screen and (min-width: 550px) {
+  .grid-container {
+    grid-template-areas:
+      "about about picture picture picture picture"
+      "hobbies hobbies contact contact contact contact"
+      "employment employment employment employment employment employment"
+      "employment employment employment employment employment employment"
+      "education education education education education education";
+  }
+
+  .navbar {
+    display: flex;
+    padding: 0;
+  }
+
+  .grid-container {
+    width: 75%;
+    margin: 50px auto;
+  }
+
+  #picture {
+    border-radius: 0%;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "picture picture about about about about"
+      "picture picture hobbies hobbies hobbies hobbies"
+      "picture picture contact contact contact contact"
+      "employment employment employment employment employment employment"
+      "employment employment employment employment employment employment"
+      "education education education education education education";
+  }
+
+  .navbar {
+    display: flex;
+    padding: 0;
+  }
+
+  #img {
+    text-align: center;
+    height: 60%;
+    width: 60%;
+  }
+}
