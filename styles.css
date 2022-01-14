@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -12,37 +13,53 @@ body {
   display: none;
   background-color: black;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .navbar__heading {
   padding: 10px;
   background-color: #800080;
   padding-right: 150px;
 }
+
 .navbar__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   width: 60%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 5%;
 }
 
 .grid-container {
+  display: -ms-grid;
   display: grid;
   grid-auto-rows: 50px;
   grid-gap: 15px;
   margin: 50px;
-  grid-template-areas: "picture" "about" "hobbies" "contact" "employment" "employment" "employment" "education";
+      grid-template-areas: "picture" "about" "hobbies" "contact" "employment" "employment" "employment" "education";
 }
+
 .grid-container #img {
   border-radius: 50%;
   height: 100px;
   width: 100px;
   background-color: black;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
+
 .grid-container__item {
   background-color: #800080;
   color: white;
@@ -50,44 +67,56 @@ body {
 }
 
 #img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: picture;
 }
 
 #about {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: about;
 }
 
 #hobbies {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: hobbies;
 }
 
 #contact {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: contact;
 }
 
 #employment {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
   grid-area: employment;
 }
 
 #education {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
   grid-area: education;
 }
 
 @media screen and (min-width: 550px) {
   .grid-container {
-    grid-template-areas: "about about picture picture picture picture" "hobbies hobbies contact contact contact contact" "employment employment employment employment employment employment" "employment employment employment employment employment employment" "education education education education education education";
+        grid-template-areas: "about about picture picture picture picture" "hobbies hobbies contact contact contact contact" "employment employment employment employment employment employment" "employment employment employment employment employment employment" "education education education education education education";
   }
-
   .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
   }
-
   .grid-container {
     width: 75%;
     margin: 50px auto;
   }
-
   #picture {
     border-radius: 0%;
     height: 100%;
@@ -95,19 +124,21 @@ body {
     background-size: cover;
   }
 }
+
 @media screen and (min-width: 768px) {
   .grid-container {
-    grid-template-areas: "picture picture about about about about" "picture picture hobbies hobbies hobbies hobbies" "picture picture contact contact contact contact" "employment employment employment employment employment employment" "employment employment employment employment employment employment" "education education education education education education";
+        grid-template-areas: "picture picture about about about about" "picture picture hobbies hobbies hobbies hobbies" "picture picture contact contact contact contact" "employment employment employment employment employment employment" "employment employment employment employment employment employment" "education education education education education education";
   }
-
   .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
   }
-
   #img {
     text-align: center;
     height: 60%;
     width: 60%;
   }
 }
+/*# sourceMappingURL=styles.css.map */
